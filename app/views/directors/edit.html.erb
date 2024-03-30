@@ -1,7 +1,13 @@
 <h1>Edit director</h1>
 
 <%= form_for @director do |form| %>
-    <%= form.label :name, "Name" %><br>
-    <%= form.text_field :name %>
+    <%= form.label :name, "Name" %> <br>
+    <%= form.text_field :name %> <br> <br>
+    <%= form.label :nationality, "Nationality" %> <br>
+    <%= form.text_field :nationality %> <br> <br>
+    <%= form.label :birth_date, "Birth Date" %> <br>
+    <%= form.date_field :birth_date %> <br> <br>
+    <%= form.label :genre_id, "Favorite Genre" %><br>
+    <%= form.collection_select :genre_id, @genres, :id, :name %> <br> <br> <br>
     <%= form.submit "Edit" %>
 <% end %>
