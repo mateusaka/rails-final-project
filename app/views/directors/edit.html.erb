@@ -1,0 +1,7 @@
+<h1>Edit director</h1>
+
+<%= form_for @director do |form| %>
+    <%= form.label :name, "Name" %><br>
+    <%= form.text_field :name %>
+    <%= form.submit "Edit" %>
+<% end %>

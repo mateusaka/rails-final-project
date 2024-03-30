@@ -1,0 +1,13 @@
+<h1>Directors</h1>
+
+<% if @directors.any? %>
+    <ul>
+        <% @directors.each do |director| %>
+            <li>
+                <%= director.name %> | <%= link_to 'Edit', edit_director_path(director) %>
+            </li>
+        <% end %>
+    </ul>
+<% else %>
+  <p>There are no directors.</p>
+<% end %>
