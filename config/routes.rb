@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  root "home#index"
+  root to: "home#index"
   
-  get "home", to: "home#index"
-
-  get "genres", to: "genres#list"
+  resources :genres
 end
