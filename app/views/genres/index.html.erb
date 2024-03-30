@@ -4,7 +4,7 @@
     <ul>
         <% @genres.each do |genre| %>
             <li>
-                <%= genre.name %> | <%= link_to 'Edit', edit_genre_path(genre) %>
+                <%= link_to genre.name, genre_path(genre) %> | <%= link_to 'Edit', edit_genre_path(genre) %>
             </li>
         <% end %>
     </ul>

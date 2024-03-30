@@ -6,6 +6,11 @@ class GenresController < ApplicationController
   def new
   end
 
+  def show
+    @genre = Genre.find(params[:id])
+    # show films
+  end
+
   def create
     @genre = Genre.new(params.require(:genre).permit(:name))
     @genre.save
