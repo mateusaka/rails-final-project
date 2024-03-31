@@ -7,6 +7,11 @@ class DirectorsController < ApplicationController
     @genres = Genre.all
   end
 
+  def show
+    @director = Director.find(params[:id])
+    @films = @director.films
+  end
+
   def create
     @director = Director.new(params.require(:director).permit(:name, :nationality, :birth_date, :genre_id))
     @director.save
