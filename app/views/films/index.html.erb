@@ -1,0 +1,13 @@
+<h1>Films</h1>
+
+<% if @films.any? %>
+    <ul>
+        <% @films.each do |film| %>
+            <li>
+                <%= link_to "#{film.title} - #{film.release_year}", film_path(film) %> | <%= link_to 'Edit', edit_film_path(film) %>
+            </li>
+        <% end %>
+    </ul>
+<% else %>
+  <p>There are no films.</p>
+<% end %>

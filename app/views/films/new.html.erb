@@ -1,0 +1,26 @@
+<h1>New film</h1>
+
+<%= form_for Film.new do |form| %>
+    <%= form.label :title, "Name" %> <br>
+    <%= form.text_field :title %> <br> <br>
+
+    <%= form.label :release_year, "Release year" %> <br>
+    <%= form.number_field :release_year, min: 1888, max: Time.current.year %> <br> <br>
+    
+    <%= form.label :synopsis, "Synopsis" %> <br>
+    <%= form.text_area :synopsis %> <br> <br>
+
+    <%= form.label :country, "Country" %> <br>
+    <%= form.text_field :country %> <br> <br>
+    
+    <%= form.label :duration, "Duration(minutes)" %> <br>
+    <%= form.number_field :duration %> <br> <br>
+
+    <%= form.label :director_id, "Director" %> <br>
+    <%= form.collection_select :director_id, @directors, :id, :name %> <br> <br>
+
+    <%= form.label :genre_id, "Genre" %> <br>
+    <%= form.collection_select :genre_id, @genres, :id, :name %> <br> <br> <br>
+
+    <%= form.submit "New" %>
+<% end %>
