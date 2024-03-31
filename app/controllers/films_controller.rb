@@ -8,6 +8,10 @@ class FilmsController < ApplicationController
     @genres = Genre.all
   end
 
+  def show
+    @film = Film.find(params[:id])
+  end
+
   def create
     @film = Film.new(params.require(:film).permit(
       :title,
@@ -24,8 +28,21 @@ class FilmsController < ApplicationController
   end
 
   def edit
+    @film = Film.find(params[:id])
   end
 
   def update
+    @film = Film.find(params[:id])
+    @film.update(params.require(:film).permit(
+      :title,
+      :release_year,
+      :synopsis,
+      :country,
+      :duration,
+      :director_id,
+      :genre_id
+    ))
+
+    redirect_to films_path
   end
 end

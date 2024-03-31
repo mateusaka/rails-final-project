@@ -1,0 +1,25 @@
+<h1>Film <%= @film.title %> details</h1>
+
+<ul>
+    <li>
+        Title: <%= link_to @film.title, film_path %>
+    </li>
+    <li>
+        Release year: <%= @film.release_year %>
+    </li>
+    <li>
+        Synopsis: <%= @film.synopsis %>
+    </li>
+    <li>
+        Country: <%= @film.country %>
+    </li>
+    <li>
+        Duration(minutes): <%= @film.duration %>
+    </li>
+    <li>
+        Director: <%= link_to @film.director.name, director_path(@film.director) %>
+    </li>
+    <li>
+        Genre: <%= link_to @film.genre.name, genre_path(@film.genre) %>
+    </li>
+</ul>

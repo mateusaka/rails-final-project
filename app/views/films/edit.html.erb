@@ -1,6 +1,6 @@
-<h1>New film</h1>
+<h1>Edit film</h1>
 
-<%= form_for Film.new do |form| %>
+<%= form_for @film do |form| %>
     <%= form.label :title, "Name" %> <br>
     <%= form.text_field :title %> <br> <br>
     <%= form.label :release_year, "Release year" %> <br>
@@ -15,5 +15,5 @@
     <%= form.collection_select :director_id, @directors, :id, :name %> <br> <br>
     <%= form.label :genre_id, "Genre" %> <br>
     <%= form.collection_select :genre_id, @genres, :id, :name %> <br> <br> <br>
-    <%= form.submit "New" %>
+    <%= form.submit "Edit" %>
 <% end %>
