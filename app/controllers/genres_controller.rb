@@ -8,7 +8,7 @@ class GenresController < ApplicationController
 
   def show
     @genre = Genre.find(params[:id])
-    # show films
+    @films = @genre.films
   end
 
   def create
